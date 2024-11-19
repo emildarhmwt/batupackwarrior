@@ -1,3 +1,15 @@
+<?php
+include './koneksi.php';
+session_start();
+
+// Get the admin ID from the URL
+$id = $_GET['id'];
+
+// Fetch the admin data from the database
+$query = "SELECT * FROM admin WHERE id='$id'";
+$result = mysqli_query($koneksi, $query);
+$admin = mysqli_fetch_assoc($result);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,6 +30,12 @@
         background-image: url("./assets/images/backgrounds/10.png");
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    .notif {
+        font-size: 12px;
+        margin-top: -15px;
+        color: #6a0707;
     }
 
     .wajib_isi {
@@ -52,6 +70,10 @@
     }
 
     .form-select.text-white {
+        color: white;
+    }
+
+    .form-control::placeholder {
         color: white;
     }
 
@@ -121,7 +143,13 @@
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <!-- <div id="sidebar"></div> -->
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
         <div class="body-wrapper">
+            <!--  Header Start -->
+            <!--  Header End -->
             <div class="logo-cover d-flex justify-content-between">
                 <img src="./assets/images/logos/bumn.svg" class="logo">
                 <div class="batu">
@@ -132,49 +160,43 @@
                 <img src="./assets/images/logos/ptba.svg" class="logo-ptba">
             </div>
             <div class="container-fluid">
-                <div class="card mt-5">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="judul fw-semibold">Form Peserta</h5>
-                        <form id="form-operation" method="POST" action="input_aksi.php">
-                            <div class="row">
-                                <div class="col-lg-6 mb-3">
-                                    <label for="shift" class="sub-judul mb-2"> <span class="wajib_isi">*</span>
-                                        TEAM :</label>
-                                    <input type="text" class="form-control" id="team" name="team" placeholder="Team"
-                                        required style="border: 1px solid #0a2443; color: #0a2443;">
-                                </div>
-                                <div class="col-lg-6 mb-3">
-                                    <label for="shift" class="sub-judul mb-2"> <span class="wajib_isi">*</span> SATUAN
-                                        KERJA :</label>
-                                    <input type="text" class="form-control" id="satuan" name="satuan"
-                                        placeholder="Satuan Kerja" required
-                                        style="border: 1px solid #0a2443; color: #0a2443;">
-                                </div>
+                        <h5 class="judul fw-semibold">Form Admin</h5>
+                        <form action="edit_admin_aksi.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?php echo $admin['id']; ?>">
+                            <div class="mb-3">
+                                <label for="tanggal" class="sub-judul mb-2">Nama :</label>
+                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Input Data"
+                                    style="border: 1px solid #0a2443; color: #0a2443;"
+                                    value="<?php echo $admin['nama']; ?>" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="shift" class="sub-judul mb-2">Username : </label>
+                                <input type="text" class="form-control" name="username" id="username"
+                                    placeholder="Input Data" style="border: 1px solid #0a2443; color: #0a2443;"
+                                    value="<?php echo $admin['username']; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="grup" class="sub-judul mb-2">Password :</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Input Data" style="border: 1px solid #0a2443; color: #0a2443;">
+                            </div>
+                            <h5 class="notif"> Jika tidak ingin mengubah password, kosongkan saja!</h5>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    onclick="togglePasswordVisibility()" style="border: 1px solid black;">
+                                <label class=" form-check-label sub-judul" for="flexCheckDefault">
+                                    Show Password
+                                </label>
 
-                            <div class="row">
-                                <div class="col-lg-4 mb-3">
-                                    <label for="grup" class="sub-judul mb-2">TOTAL TONASE: </label>
-                                    <input type="number" class="form-control" id="total_tonase" name="total_tonase"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Total Tonase">
-                                </div>
-                                <div class="col-lg-4 mb-3">
-                                    <label for="pic" class="sub-judul mb-2">POINT :</label>
-                                    <input type="number" class="form-control" id="point" name="point"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Point">
-                                </div>
-                                <div class="col-lg-4 mb-3">
-                                    <label for="pengawas" class="sub-judul mb-2"> TOTAL POINT :</label>
-                                    <input type="number" class="form-control" id="total_point" name="total_point"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Total Point">
-                                </div>
                             </div>
                             <div class="text-center mt-4">
                                 <button type="submit" class="btn btn-custom-eye me-2">
                                     Submit
                                 </button>
                                 <button type="button" class="btn btn-custom-edit"
-                                    onclick="window.location.href='data_peserta.php'">Kembali</button>
+                                    onclick="window.location.href='admin.php'">Kembali</button>
                             </div>
                         </form>
                     </div>
@@ -182,6 +204,13 @@
             </div>
         </div>
     </div>
+    <script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const checkbox = document.getElementById('flexCheckDefault');
+        passwordInput.type = checkbox.checked ? 'text' : 'password';
+    }
+    </script>
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/sidebarmenu.js"></script>

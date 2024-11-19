@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Report Application</title>
-    <link rel="shortcut icon" type="image/png" href="./assets/images/logos/logo3.png" />
+    <title>BatuPACKWARrior</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/images/logos/batu.png" />
     <link rel="stylesheet" href="./assets/css/styles.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,12 @@
         href="https://fonts.googleapis.com/css2?family=Acme&family=Coiny&family=Concert+One&family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Pacifico&family=Playpen+Sans:wght@100..800&family=Playwrite+DE+Grund:wght@100..400&family=Righteous&family=Sacramento&family=Varela+Round&family=Yatra+One&display=swap"
         rel="stylesheet">
     <style>
+    .body-wrapper {
+        background-image: url("./assets/images/backgrounds/10.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     .notif {
         font-size: 12px;
         margin-top: 5px;
@@ -38,12 +44,14 @@
         font-size: 30px;
         margin-bottom: 50px;
         margin-top: 10px;
-        color: white;
+        color: #0a2443;
     }
 
     .sub-judul {
         font-family: "Varela Round", serif;
-        color: white;
+        color: #0a2443;
+        font-weight: bold;
+        font-size: 15px;
     }
 
     .form-select.text-white option {
@@ -56,6 +64,66 @@
 
     .form-control::placeholder {
         color: white;
+    }
+
+    .logo {
+        width: 20%;
+        height: auto;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: -70px;
+    }
+
+    .logo-ptba {
+        width: 20%;
+        height: auto;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: -70px;
+    }
+
+    .batu {
+        font-family: "Righteous", serif;
+        color: #dee7e6ab;
+        font-size: 40px;
+        margin-bottom: -70px;
+        margin-top: 10px;
+    }
+
+    .card {
+        background-color: rgb(255 255 255 / 65%) !important;
+    }
+
+    .form-control::placeholder {
+        font-family: "Varela Round", serif;
+        color: #0a2443;
+        font-size: 15px;
+    }
+
+    #searchInput::placeholder {
+        font-family: "Varela Round", serif;
+        color: #0a2443;
+        font-size: 15px;
+    }
+
+    .btn-custom-eye {
+        background-color: #1d2730 !important;
+        color: white !important;
+    }
+
+    .btn-custom-eye:hover {
+        background-color: #1d27309e !important;
+        color: white !important;
+    }
+
+    .btn-custom-edit {
+        background-color: #dfb58f !important;
+        color: black !important;
+    }
+
+    .btn-custom-edit:hover {
+        background-color: #dfb58f82 !important;
+        color: black !important;
     }
     </style>
 </head>
@@ -70,8 +138,16 @@
         <!--  Main wrapper -->
         <div class="body-wrapper">
             <!--  Header Start -->
-            <div id="navbar"></div>
             <!--  Header End -->
+            <div class="logo-cover d-flex justify-content-between">
+                <img src="./assets/images/logos/bumn.svg" class="logo">
+                <div class="batu">
+                    <a href="logout.php" class="batu" style="color: inherit; cursor: pointer;">
+                        BatuPACKWARrior
+                    </a>
+                </div>
+                <img src="./assets/images/logos/ptba.svg" class="logo-ptba">
+            </div>
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-body">
@@ -79,30 +155,35 @@
                         <form action="admin_aksi.php" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="tanggal" class="sub-judul mb-2">Nama :</label>
-                                <input type="text" class="form-control text-white" name="nama" id="nama"
-                                    placeholder="Input Data" required>
+                                <input type="text" class="form-control" name="nama" id="nama" placeholder="Input Data"
+                                    style="border: 1px solid #0a2443; color: #0a2443;" required>
                             </div>
                             <div class="mb-3">
                                 <label for="shift" class="sub-judul mb-2">Username : </label>
-                                <input type="text" class="form-control text-white" name="username" id="username"
-                                    placeholder="Input Data" required>
+                                <input type="text" class="form-control" name="username" id="username"
+                                    placeholder="Input Data" style="border: 1px solid #0a2443; color: #0a2443;"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label for="grup" class="sub-judul mb-2">Password :</label>
-                                <input type="password" class="form-control text-white" id="password" name="password"
-                                    placeholder="Input Data" required>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Input Data" style="border: 1px solid #0a2443; color: #0a2443;"
+                                    required>
                             </div>
                             <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                    onclick="togglePasswordVisibility()" style="border: 1px solid white;">
+                                    onclick="togglePasswordVisibility()" style="border: 1px solid black;">
                                 <label class=" form-check-label sub-judul" for="flexCheckDefault">
                                     Show Password
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary me-2">
-                                Submit</button>
-                            <button type="button" class="btn btn-danger">
-                                Kembali</button>
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-custom-eye me-2">
+                                    Submit
+                                </button>
+                                <button type="button" class="btn btn-custom-edit"
+                                    onclick="window.location.href='admin.php'">Kembali</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -110,12 +191,6 @@
         </div>
     </div>
     <script>
-    fetch('Navbar.php')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-        });
-
     function togglePasswordVisibility() {
         const passwordInput = document.getElementById('password');
         const checkbox = document.getElementById('flexCheckDefault');

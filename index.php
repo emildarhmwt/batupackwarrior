@@ -113,9 +113,6 @@ include './koneksi.php';
         data-sidebar-position="fixed" data-header-position="fixed">
         <!--  Main wrapper -->
         <div class="body-wrapper">
-            <!--  Header Start -->
-            <!-- <div id="navbar"></div> -->
-            <!--  Header End -->
             <div class="logo-cover d-flex justify-content-between">
                 <img src="./assets/images/logos/bumn.svg" class="logo">
                 <div class="batu">
@@ -190,11 +187,6 @@ include './koneksi.php';
         </div>
     </div>
     <script>
-    fetch('Navbar.php')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-        });
 
     document.addEventListener('DOMContentLoaded', function() {
         const rowsPerPageSelect = document.getElementById('rowsPerPageSelect');

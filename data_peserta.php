@@ -9,7 +9,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BatuPACKWARrior</title>
-    <link rel="shortcut icon" type="image/png" href="./assets/images/logos/logo3.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/images/logos/batu.png" />
     <link rel="stylesheet" href="./assets/css/styles.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -22,6 +22,28 @@ session_start();
         href="https://fonts.googleapis.com/css2?family=Acme&family=Coiny&family=Concert+One&family=Fredoka:wght@300..700&family=Outfit:wght@100..900&family=Pacifico&family=Playpen+Sans:wght@100..800&family=Playwrite+DE+Grund:wght@100..400&family=Righteous&family=Sacramento&family=Varela+Round&family=Yatra+One&display=swap"
         rel="stylesheet">
     <style>
+    .logo {
+        width: 20%;
+        height: auto;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: -70px;
+    }
+
+    .logo-ptba {
+        width: 20%;
+        height: auto;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: -70px;
+    }
+
+    .body-wrapper {
+        background-image: url("./assets/images/backgrounds/10.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     .varela-round-regular {
         font-family: "Varela Round", serif;
         font-weight: 400;
@@ -39,7 +61,7 @@ session_start();
 
     .sub-judul {
         font-family: "Varela Round", serif;
-        color: white;
+        color: black;
     }
 
     .form-select.text-white option {
@@ -67,6 +89,62 @@ session_start();
     .produksi:hover {
         color: black;
     }
+
+    .form-control::placeholder {
+        color: black;
+    }
+
+    #searchInput::placeholder {
+        color: black;
+    }
+
+    .batu {
+        font-family: "Righteous", serif;
+        color: #dee7e6ab;
+        font-size: 40px;
+        margin-bottom: -70px;
+        margin-top: 10px;
+    }
+
+    .btn-custom-eye {
+        background-color: #1d2730 !important;
+        color: white !important;
+    }
+
+    .btn-custom-eye:hover {
+        background-color: #1d27309e !important;
+        color: white !important;
+    }
+
+    .btn-custom-edit {
+        background-color: #dfb58f !important;
+        color: black !important;
+    }
+
+    .btn-custom-edit:hover {
+        background-color: #dfb58f82 !important;
+        color: black !important;
+    }
+
+    .btn-custom-delete {
+        background-color: #3d0606 !important;
+        color: white !important;
+    }
+
+    .btn-custom-delete:hover {
+        background-color: #3d06068a !important;
+        color: white !important;
+    }
+
+    .btn-custom-add {
+        background-color: #25a0ab !important;
+        color: black !important;
+    }
+
+    .btn-custom-add:hover {
+        background-color: #25a0ab9e !important;
+        color: black !important;
+    }
     </style>
 </head>
 
@@ -74,38 +152,48 @@ session_start();
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
-        <!-- Sidebar Start -->
-        <!-- <div id="sidebar"></div> -->
-        <!--  Sidebar End -->
-        <!--  Main wrapper -->
         <div class="body-wrapper">
-            <!--  Header Start -->
-            <div id="navbar"></div>
-            <!--  Header End -->
+            <div class="logo-cover d-flex justify-content-between">
+                <img src="./assets/images/logos/bumn.svg" class="logo">
+                <div class="batu">
+                    <a href="logout.php" class="batu" style="color: inherit; cursor: pointer;">
+                        BatuPACKWARrior
+                    </a>
+                </div>
+                <img src="./assets/images/logos/ptba.svg" class="logo-ptba">
+            </div>
             <div class="container-fluid">
-                <div class="card mt-5">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="judul fw-semibold">List Peserta</h5>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label>
-                                <select id="rowsPerPageSelect" class="form-select text-white"
-                                    style="width: auto; display: inline-block;">
-                                    <option value="10">10</option>
+                                <select id="rowsPerPageSelect" class="form-select text-black"
+                                    style="width: auto; display: inline-block; border: 1px solid black;">
+                                    <option value="10" selected>10</option>
                                     <option value="20">20</option>
-                                    <option value="30" selected>30</option>
+                                    <option value="30">30</option>
                                     <option value="40">40</option>
                                     <option value="50">50</option>
                                 </select>
                                 <span class="sub-judul"> data per halaman</span>
                             </div>
                             <div class="col-md-6 d-flex justify-content-end">
-                                <button type="button" class="btn btn-primary"
-                                    onclick="window.location.href='input.php'"> Tambah</button>
-                                <button type="button" class="btn btn-primary mx-3" onclick="editSelected()"> Edit
+                                <button type="button" class="btn btn-custom-eye me-2"
+                                    onclick="window.location.href='input.php'"><i class="bi bi-plus-circle"></i>
                                 </button>
-                                <input type="text" class="form-control text-white me-2" id="searchInput"
-                                    placeholder="Cari..." style="max-width: 200px; height: 40px; font-size: .95rem;">
+                                <button type="button" class="btn btn-custom-edit me-2" onclick="editSelected()"> <i
+                                        class="bi bi-pen"></i>
+                                </button>
+                                <button type="button" class="btn btn-custom-delete me-2" onclick="deleteSelected()"> <i
+                                        class="bi bi-pen"></i>
+                                </button>
+                                <button type="button" class="btn btn-custom-add me-2"
+                                    onclick="window.location.href='admin.php'"> <i class="bi bi-person"></i>
+                                </button>
+                                <input type="text" class="form-control text-black" id="searchInput"
+                                    placeholder="Cari..."
+                                    style="max-width: 200px; height: 40px; font-size: .95rem; border: 1px solid black;">
                             </div>
                         </div>
                         <div class="table-responsive products-table" data-simplebar>
@@ -115,9 +203,9 @@ session_start();
                                         <th class="fs-3" style="width: 5%">PERINGKAT</th>
                                         <th class="fs-3">TEAM</th>
                                         <th class="fs-3">SATUAN KERJA</th>
-                                        <th class="fs-3">TOTAL <br> TONASE</th>
+                                        <th class="fs-3">TOTAL TONASE</th>
                                         <th class="fs-3">POINT</th>
-                                        <th class="fs-3">TOTAL <br> POINT</th>
+                                        <th class="fs-3">TOTAL POINT</th>
                                         <th class="fs-3" style="width: 2%">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
@@ -142,7 +230,7 @@ session_start();
                                         <td class="text-center">
                                             <div class="form-check">
                                                 <input class="form-check-input rowCheckbox" type="checkbox" value=""
-                                                    id="flexCheckDefault">
+                                                    data-id="<?php echo $p['id']; ?>">
                                             </div>
                                         </td>
                                     </tr>
@@ -163,12 +251,6 @@ session_start();
         </div>
     </div>
     <script>
-    fetch('Navbar_admin.php')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-        });
-
     function toggleCheckboxes(source) {
         const checkboxes = document.querySelectorAll('.rowCheckbox');
         checkboxes.forEach(checkbox => {
@@ -197,6 +279,101 @@ session_start();
             window.location.href = `edit.php?${queryString}`;
         } else {
             alert('Silakan pilih data yang ingin diedit.');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const rowsPerPageSelect = document.getElementById('rowsPerPageSelect');
+        const paginationElement = document.getElementById('Pagination');
+        const tableBody = document.querySelector('tbody');
+        const searchInput = document.getElementById('searchInput');
+        let currentPage = 1;
+        let rowsPerPage = parseInt(rowsPerPageSelect.value);
+
+        rowsPerPageSelect.addEventListener('change', function() {
+            rowsPerPage = parseInt(this.value);
+            currentPage = 1;
+            updateTable();
+        });
+
+        searchInput.addEventListener('input', function() {
+            currentPage = 1;
+            updateTable();
+        });
+
+        function updateTable() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const rows = Array.from(tableBody.querySelectorAll('tr'));
+            const filteredRows = rows.filter(row => {
+                return Array.from(row.cells).some(cell =>
+                    cell.textContent.toLowerCase().includes(searchTerm)
+                );
+            });
+
+            const totalRows = filteredRows.length;
+            const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+            // Hide all rows
+            rows.forEach(row => row.style.display = 'none');
+
+            // Show only the filtered rows for the current page
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            filteredRows.slice(start, end).forEach(row => row.style.display = '');
+
+            // Update pagination
+            updatePagination(totalPages);
+        }
+
+        function updatePagination(totalPages) {
+            paginationElement.innerHTML = '';
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = 'page-item' + (i === currentPage ? ' active' : '');
+                const a = document.createElement('a');
+                a.className = 'page-link';
+                a.href = '#';
+                a.textContent = i;
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentPage = i;
+                    updateTable();
+                });
+                li.appendChild(a);
+                paginationElement.appendChild(li);
+            }
+        }
+
+        updateTable();
+    });
+
+    function deleteSelected() {
+        const selectedCheckboxes = document.querySelectorAll('.rowCheckbox:checked');
+        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => checkbox.getAttribute('data-id'));
+
+        if (selectedIds.length > 0) {
+            if (confirm('Apakah Anda yakin ingin menghapus data yang dipilih?')) {
+                fetch('delete.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            ids: selectedIds
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Data berhasil dihapus.');
+                            location.reload();
+                        } else {
+                            alert('Terjadi kesalahan saat menghapus data.');
+                        }
+                    });
+            }
+        } else {
+            alert('Silakan pilih data yang ingin dihapus.');
         }
     }
     </script>

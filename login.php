@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arsip Digital</title>
-    <link rel="shortcut icon" type="image/png" href="./assets/images/logo.png" />
+    <title>BatuPACKWARrior</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/images/logos/batu.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +14,14 @@
         rel="stylesheet">
     <style>
     body {
-        background-color: #bdd7d9;
+        background-image: url(./assets/images/backgrounds/7.png);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .img-login {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: auto;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -64,11 +66,14 @@
 
     .sub-judul {
         font-family: 'Varela Round', sans-serif;
+        color: black;
+        font-weight: bold;
     }
 
     .sub-judul2 {
         font-family: 'Varela Round', sans-serif;
         font-weight: bold;
+        color: black;
     }
 
     .page-wrapper {
@@ -95,33 +100,30 @@
     }
 
     .btn-custom-eye {
-        background-color: #11475e !important;
+        background-color: #1d2730 !important;
         color: white !important;
     }
 
     .btn-custom-eye:hover {
-        background-color: #609fb2 !important;
-        color: white !important;
-    }
-
-    .btn-custom-upload {
-        background-color: #eb9009 !important;
-        color: white !important;
-    }
-
-    .btn-custom-upload:hover {
-        background-color: #eb900970 !important;
+        background-color: #1d27309e !important;
         color: white !important;
     }
 
     .btn-custom-edit {
-        background-color: #7c1919 !important;
-        color: white !important;
+        background-color: #dfb58f !important;
+        color: black !important;
     }
 
     .btn-custom-edit:hover {
-        background-color: #b27373 !important;
-        color: white !important;
+        background-color: #dfb58f82 !important;
+        color: black !important;
+    }
+
+    .card {
+        background-color: rgba(216, 226, 237, 0.32);
+        width: 100%;
+        max-width: 50%;
+        margin: auto;
     }
     </style>
 </head>
@@ -134,11 +136,11 @@
             class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
             <div class="d-flex align-items-center justify-content-center w-100">
                 <div class="row justify-content-center w-100">
-                    <div class="col-md-8 col-lg-6 col-xxl-3">
+                    <div>
                         <div class="card mb-0">
                             <div class="card-body">
                                 <h3 class="text-center mb-4 sub-judul2"> Login Admin</h3>
-                                <img src="../assets/images/login.png" alt="Logo" class="img-login">
+                                <img src="./assets/images/logos/batu.png" alt="Logo" class="img-login">
                                 <p class="text-center sub-judul2"></p>
                                 <?php 
                                 // pesan notifikasi
@@ -167,7 +169,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input primary" type="checkbox" value=""
                                                 id="showPassword">
-                                            <label class="form-check-label text-dark sub-judul" for="showPassword">
+                                            <label class="form-check-label text-dark sub-judul mb-3" for="showPassword">
                                                 Show Password
                                             </label>
                                         </div>
@@ -176,7 +178,7 @@
                                         <input type="submit" value="Login"
                                             class="btn btn-custom-eye fs-4 mb-4 rounded-2 flex-grow-1 me-2 sub-judul">
                                         <a href="./index.php"
-                                            class="btn btn-custom-edit fs-4 mb-4 rounded-2 flex-grow-1 sub-judul">Back</a>
+                                            class="btn btn-custom-edit fs-4 mb-4 rounded-2 flex-grow-1 sub-judul">Kembali</a>
                                     </div>
                                 </form>
                             </div>
