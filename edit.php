@@ -8,6 +8,8 @@ $teams = isset($_GET['team']) ? $_GET['team'] : [];
 $satuans = isset($_GET['satuan']) ? $_GET['satuan'] : [];
 $total_tonases = isset($_GET['total_tonase']) ? $_GET['total_tonase'] : [];
 $points = isset($_GET['point']) ? $_GET['point'] : [];
+$complains = isset($_GET['complain']) ? $_GET['complain'] : [];
+$point_complains = isset($_GET['point_complain']) ? $_GET['point_complain'] : [];
 $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
 ?>
 
@@ -161,7 +163,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label for="satuan_<?php echo $i; ?>" class="sub-judul">Team</label>
+                                        <label for="satuan_<?php echo $i; ?>" class="sub-judul">Team :</label>
                                         <input type="text" class="form-control" id="team_<?php echo $i; ?>"
                                             style="border: 1px solid #0a2443; color: black;" name="team[]"
                                             value="<?php echo htmlspecialchars($teams[$i]); ?>" required>
@@ -170,7 +172,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="satuan_<?php echo $i; ?>" class="sub-judul">Satuan
-                                            Kerja</label>
+                                            Kerja :</label>
                                         <input type="text" class="form-control" id="satuan_<?php echo $i; ?>"
                                             style="border: 1px solid #0a2443; color: #0a2443;" name="satuan[]"
                                             value="<?php echo htmlspecialchars($satuans[$i]); ?>" required>
@@ -179,30 +181,54 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="total_tonase_<?php echo $i; ?>" class="sub-judul">Total
-                                            Tonase</label>
+                                            Tonase :</label>
                                         <input type="number" class="form-control" id="total_tonase_<?php echo $i; ?>"
                                             name="total_tonase[]" style="border: 1px solid #0a2443; color: #0a2443;"
-                                            value="<?php echo htmlspecialchars($total_tonases[$i]); ?>" required>
+                                            value="<?php echo htmlspecialchars($total_tonases[$i]); ?>" required
+                                            step="0.01">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="point_<?php echo $i; ?>" class="sub-judul">Point Tonase :</label>
+                                        <input type="number" class="form-control" id="point_<?php echo $i; ?>"
+                                            name="point[]" style="border: 1px solid #0a2443; color: #0a2443;"
+                                            value="<?php echo htmlspecialchars($points[$i]); ?>" required step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="complain_<?php echo $i; ?>" class="sub-judul">Complain :</label>
+                                        <input type="number" class="form-control" id="complain_<?php echo $i; ?>"
+                                            name="complain[]" style="border: 1px solid #0a2443; color: #0a2443;"
+                                            value="<?php echo htmlspecialchars($complains[$i]); ?>" required
+                                            step="0.01">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-3">
-                                        <label for="point_<?php echo $i; ?>" class="sub-judul">Point</label>
-                                        <input type="number" class="form-control" id="point_<?php echo $i; ?>"
-                                            name="point[]" style="border: 1px solid #0a2443; color: #0a2443;"
-                                            value="<?php echo htmlspecialchars($points[$i]); ?>" required>
+                                        <label for="point_complain_<?php echo $i; ?>" class="sub-judul">Point Complain
+                                            :</label>
+                                        <input type="number" class="form-control" id="point_complain_<?php echo $i; ?>"
+                                            name="point_complain[]" style="border: 1px solid #0a2443; color: #0a2443;"
+                                            value="<?php echo htmlspecialchars($point_complains[$i]); ?>" required
+                                            step="0.01">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="mb-3">
                                         <label for="total_point_<?php echo $i; ?>" class="sub-judul">Total
-                                            Point</label>
+                                            Point :</label>
                                         <input type="number" class="form-control" id="total_point_<?php echo $i; ?>"
                                             name="total_point[]" style="border: 1px solid #0a2443; color: #0a2443;"
-                                            value="<?php echo htmlspecialchars($total_points[$i]); ?>" required>
+                                            value="<?php echo htmlspecialchars($total_points[$i]); ?>" required
+                                            step="0.01">
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +238,6 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                 <button type="submit" class="btn btn-custom-eye me-2">Simpan</button>
                                 <a href="data_peserta.php" class="btn btn-custom-edit">Kembali</a>
                             </div>
-
                         </form>
                     </div>
                 </div>

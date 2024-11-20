@@ -113,7 +113,13 @@ include './koneksi.php';
     }
 
     tr th {
-        font-size: 13px;
+        font-size: 15px;
+        font-family: "Varela Round", serif;
+    }
+
+    tr td {
+        font-size: 15px;
+        font-family: "Varela Round", serif;
     }
 
     @media (max-width: 767.98px) {
@@ -131,7 +137,11 @@ include './koneksi.php';
         }
 
         tr th {
-            font-size: 5px;
+            font-size: 13px;
+        }
+
+        tr td {
+            font-size: 13px;
         }
 
         .form-select {
@@ -185,7 +195,9 @@ include './koneksi.php';
                                         <th>TEAM</th>
                                         <th>SATUAN KERJA</th>
                                         <th>TOTAL TONASE</th>
-                                        <th>POINT</th>
+                                        <th>POINT TONASE</th>
+                                        <th>COMPLAIN</th>
+                                        <th>POINT COMPLAIN</th>
                                         <th>TOTAL POINT</th>
                                     </tr>
                                 </thead>
@@ -201,6 +213,8 @@ include './koneksi.php';
                                         <td><?php echo $p['satuan'] ?></td>
                                         <td class="text-center"><?php echo $p['total_tonase'] ?></td>
                                         <td class="text-center"><?php echo $p['point'] ?></td>
+                                        <td class="text-center"><?php echo $p['complain'] ?></td>
+                                        <td class="text-center"><?php echo $p['point_complain'] ?></td>
                                         <td class="text-center"><?php echo $p['total_point'] ?></td>
                                     </tr>
                                     <?php

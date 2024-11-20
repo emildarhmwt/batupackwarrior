@@ -221,8 +221,6 @@
                     </div>
                 </div>
             </div>
-            <img src="./assets/images/loginkiri.png" alt="Left Image" class="corner-image left">
-            <img src="./assets/images/loginkanan.png" alt="Right Image" class="corner-image right">
         </div>
         <script>
         document.getElementById('showPassword').addEventListener('change', function() {
