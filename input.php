@@ -164,14 +164,14 @@
                                 <div class="col-lg-6 mb-3">
                                     <label for="grup" class="sub-judul mb-2">TOTAL TONASE : </label>
                                     <input type="number" class="form-control" id="total_tonase" name="total_tonase"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Total Tonase"
-                                        step="0.01">
+                                        style="border: 1px solid #0a2443; color: #0a2443;"
+                                        placeholder="Total Tonase (gunakan titik untuk koma)" step="0.01">
                                 </div>
                                 <div class="col-lg-6 mb-3">
                                     <label for="pic" class="sub-judul mb-2">POINT TONASE :</label>
                                     <input type="number" class="form-control" id="point" name="point"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Point"
-                                        step="0.01">
+                                        style="border: 1px solid #0a2443; color: #0a2443;"
+                                        placeholder="Point (gunakan titik untuk koma)" step="0.01">
                                 </div>
                             </div>
 
@@ -179,20 +179,20 @@
                                 <div class="col-lg-4 mb-3">
                                     <label for="grup" class="sub-judul mb-2">COMPLAIN : </label>
                                     <input type="number" class="form-control" id="complain" name="complain"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Complain"
-                                        step="0.01">
+                                        style="border: 1px solid #0a2443; color: #0a2443;"
+                                        placeholder="Complain (gunakan titik untuk koma)" step="0.01">
                                 </div>
                                 <div class="col-lg-4 mb-3">
                                     <label for="pic" class="sub-judul mb-2">POINT COMPLAIN :</label>
                                     <input type="number" class="form-control" id="point_complain" name="point_complain"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Point Complain"
-                                        step="0.01">
+                                        style="border: 1px solid #0a2443; color: #0a2443;"
+                                        placeholder="Point Complain (gunakan titik untuk koma)" step="0.01">
                                 </div>
                                 <div class="col-lg-4 mb-3">
                                     <label for="pengawas" class="sub-judul mb-2"> TOTAL POINT :</label>
                                     <input type="number" class="form-control" id="total_point" name="total_point"
-                                        style="border: 1px solid #0a2443; color: #0a2443;" placeholder="Total Point"
-                                        step="0.01">
+                                        style="border: 1px solid #0a2443; color: #0a2443;"
+                                        placeholder="Total Point (gunakan titik untuk koma)" step="0.01">
                                 </div>
                             </div>
                             <div class="text-center mt-4">

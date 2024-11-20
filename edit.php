@@ -130,6 +130,12 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
         background-color: rgb(255 255 255 / 65%) !important;
     }
 
+    .notif {
+        font-size: 10px;
+        font-family: "Varela Round", serif;
+        color: #570a0a;
+    }
+
     @media (max-width: 767.98px) {
         .batu {
             font-size: 15px;
@@ -189,6 +195,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                             name="total_tonase[]" style="border: 1px solid #0a2443; color: #0a2443;"
                                             value="<?php echo htmlspecialchars($total_tonases[$i]); ?>" required
                                             step="0.01">
+                                        <h5 class="notif"> Gunakan titik untuk koma</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -197,6 +204,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                         <input type="number" class="form-control" id="point_<?php echo $i; ?>"
                                             name="point[]" style="border: 1px solid #0a2443; color: #0a2443;"
                                             value="<?php echo htmlspecialchars($points[$i]); ?>" required step="0.01">
+                                        <h5 class="notif"> Gunakan titik untuk koma</h5>
                                     </div>
                                 </div>
                             </div>
@@ -209,6 +217,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                             name="complain[]" style="border: 1px solid #0a2443; color: #0a2443;"
                                             value="<?php echo htmlspecialchars($complains[$i]); ?>" required
                                             step="0.01">
+                                        <h5 class="notif"> Gunakan titik untuk koma</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -219,6 +228,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                             name="point_complain[]" style="border: 1px solid #0a2443; color: #0a2443;"
                                             value="<?php echo htmlspecialchars($point_complains[$i]); ?>" required
                                             step="0.01">
+                                        <h5 class="notif"> Gunakan titik untuk koma</h5>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -229,6 +239,7 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                                             name="total_point[]" style="border: 1px solid #0a2443; color: #0a2443;"
                                             value="<?php echo htmlspecialchars($total_points[$i]); ?>" required
                                             step="0.01">
+                                        <h5 class="notif"> Gunakan titik untuk koma</h5>
                                     </div>
                                 </div>
                             </div>
