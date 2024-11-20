@@ -199,9 +199,9 @@ include './koneksi.php';
                                         <td class="text-center"><?php echo $no++; ?></td>
                                         <td><?php echo $p['team'] ?></td>
                                         <td><?php echo $p['satuan'] ?></td>
-                                        <td><?php echo $p['total_tonase'] ?></td>
-                                        <td><?php echo $p['point'] ?></td>
-                                        <td><?php echo $p['total_point'] ?></td>
+                                        <td class="text-center"><?php echo $p['total_tonase'] ?></td>
+                                        <td class="text-center"><?php echo $p['point'] ?></td>
+                                        <td class="text-center"><?php echo $p['total_point'] ?></td>
                                     </tr>
                                     <?php
                                             }

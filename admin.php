@@ -255,7 +255,7 @@ session_start();
                                             $kategori = mysqli_query($koneksi, "SELECT * FROM admin ORDER BY id");
                                             while ($p = mysqli_fetch_array($kategori)) {
                                             ?>
-                                    <tr>
+                                    <tr class="text-center">
                                         <td class="text-center"><?php echo $no++; ?></td>
                                         <td><?php echo $p['nama'] ?></td>
                                         <td><?php echo $p['username'] ?></td>
