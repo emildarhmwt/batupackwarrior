@@ -145,6 +145,88 @@ session_start();
         background-color: #25a0ab9e !important;
         color: black !important;
     }
+
+    .search {
+        max-width: 200px;
+        height: 40px;
+        font-size: .95rem;
+        border: 1px solid black;
+    }
+
+    tr th {
+        font-size: 13px;
+    }
+
+    @media (max-width: 767.98px) {
+        .batu {
+            font-size: 15px;
+            margin-bottom: -70px;
+            margin-top: 31px;
+        }
+
+        .search {
+            max-width: 150px;
+            height: 40px;
+            font-size: .95rem;
+            border: 1px solid black;
+        }
+
+        tr th {
+            font-size: 5px;
+        }
+
+        .form-select {
+            padding: 8px 30px 8px 10px;
+            font-size: 5px;
+            height: 40px;
+        }
+
+        .btn-custom-eye {
+            width: 10px;
+            height: 40px;
+            padding: 10px 15px;
+        }
+
+        .btn-custom-edit {
+            width: 10px;
+            height: 40px;
+            padding: 10px 15px;
+        }
+
+        .btn-custom-delete {
+            width: 10px;
+            height: 40px;
+            padding: 10px 15px;
+        }
+
+        .btn-custom-add {
+            width: 10px;
+            height: 40px;
+            padding: 10px 15px;
+        }
+
+        element.style {
+            width: 60px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+
+        .bi-plus-circle {
+            font-size: 5px;
+        }
+
+        .bi-pen {
+            font-size: 5px;
+        }
+
+        .bi-trash2 {
+            font-size: 5px;
+        }
+
+        .bi-person {
+            font-size: 5px;
+        }
+    }
     </style>
 </head>
 
@@ -166,8 +248,8 @@ session_start();
                 <div class="card">
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label>
+                            <div class="col-md-3 col-3">
+                                <!-- <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label> -->
                                 <select id="rowsPerPageSelect" class="form-select text-black"
                                     style="width: auto; display: inline-block; border: 1px solid black;">
                                     <option value="10" selected>10</option>
@@ -176,36 +258,39 @@ session_start();
                                     <option value="40">40</option>
                                     <option value="50">50</option>
                                 </select>
-                                <span class="sub-judul"> data per halaman</span>
+                                <!-- <span class="sub-judul"> data per halaman</span> -->
                             </div>
-                            <div class="col-md-6 d-flex justify-content-end">
-                                <button type="button" class="btn btn-custom-eye me-2"
+                            <div class="col-md-9 col-9 d-flex justify-content-end">
+                                <button type="button"
+                                    class="btn btn-custom-eye me-2 d-flex align-items-center justify-content-center"
                                     onclick="window.location.href='input.php'"><i class="bi bi-plus-circle"></i>
                                 </button>
-                                <button type="button" class="btn btn-custom-edit me-2" onclick="editSelected()"> <i
-                                        class="bi bi-pen"></i>
+                                <button type="button"
+                                    class="btn btn-custom-edit me-2 d-flex align-items-center justify-content-center"
+                                    onclick="editSelected()"> <i class="bi bi-pen"></i>
                                 </button>
-                                <button type="button" class="btn btn-custom-delete me-2" onclick="deleteSelected()"> <i
-                                        class="bi bi-pen"></i>
+                                <button type="button"
+                                    class="btn btn-custom-delete me-2 d-flex align-items-center justify-content-center"
+                                    onclick="deleteSelected()"> <i class="bi bi-trash2"></i>
                                 </button>
-                                <button type="button" class="btn btn-custom-add me-2"
+                                <button type="button"
+                                    class="btn btn-custom-add me-2 d-flex align-items-center justify-content-center"
                                     onclick="window.location.href='admin.php'"> <i class="bi bi-person"></i>
                                 </button>
-                                <input type="text" class="form-control text-black" id="searchInput"
-                                    placeholder="Cari..."
-                                    style="max-width: 200px; height: 40px; font-size: .95rem; border: 1px solid black;">
+                                <input type="text" class="form-control text-black search" id="searchInput"
+                                    placeholder="Cari...">
                             </div>
                         </div>
                         <div class="table-responsive products-table" data-simplebar>
                             <table class="table table-bordered text-nowrap mb-0 align-middle table-hover">
                                 <thead class="fs-4">
                                     <tr class="text-center">
-                                        <th class="fs-3" style="width: 5%">PERINGKAT</th>
-                                        <th class="fs-3">TEAM</th>
-                                        <th class="fs-3">SATUAN KERJA</th>
-                                        <th class="fs-3">TOTAL TONASE</th>
-                                        <th class="fs-3">POINT</th>
-                                        <th class="fs-3">TOTAL POINT</th>
+                                        <th style="width: 5%">PERINGKAT</th>
+                                        <th>TEAM</th>
+                                        <th>SATUAN KERJA</th>
+                                        <th>TOTAL TONASE</th>
+                                        <th>POINT</th>
+                                        <th>TOTAL POINT</th>
                                         <th class="fs-3" style="width: 2%">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
@@ -239,12 +324,12 @@ session_start();
                                             ?>
                                 </tbody>
                             </table>
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center mt-3" id="Pagination">
-                                    <!-- Pagination items will be added here by JavaScript -->
-                                </ul>
-                            </nav>
                         </div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center mt-3" id="Pagination">
+                                <!-- Pagination items will be added here by JavaScript -->
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

@@ -127,6 +127,14 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
     .card {
         background-color: rgb(255 255 255 / 65%) !important;
     }
+
+    @media (max-width: 767.98px) {
+        .batu {
+            font-size: 15px;
+            margin-bottom: -70px;
+            margin-top: 31px;
+        }
+    }
     </style>
 </head>
 
@@ -200,8 +208,11 @@ $total_points = isset($_GET['total_point']) ? $_GET['total_point'] : [];
                             </div>
 
                             <?php endfor; ?>
-                            <button type="submit" class="btn btn-custom-eye me-2">Simpan</button>
-                            <a href="data_peserta.php" class="btn btn-custom-edit">Batal</a>
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-custom-eye me-2">Simpan</button>
+                                <a href="data_peserta.php" class="btn btn-custom-edit">Kembali</a>
+                            </div>
+
                         </form>
                     </div>
                 </div>

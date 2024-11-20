@@ -145,6 +145,52 @@ session_start();
         background-color: #25a0ab9e !important;
         color: black !important;
     }
+
+    .bi-plus {
+        font-size: 15px;
+    }
+
+    .bi-arrow-left-short {
+        font-size: 15px;
+    }
+
+    .search {
+        max-width: 200px;
+        height: 40px;
+        font-size: .95rem;
+        border: 1px solid black;
+    }
+
+    @media (max-width: 767.98px) {
+        .batu {
+            font-size: 15px;
+            margin-bottom: -70px;
+            margin-top: 31px;
+        }
+
+        .btn-custom-eye {
+            width: 10px;
+            height: 40px;
+            padding: 10px 15px;
+        }
+
+        .btn-custom-edit {
+            width: 10px;
+            height: 40px;
+            padding: 10px 15px;
+        }
+
+        .search {
+            max-width: 150px;
+            height: 40px;
+            font-size: .95rem;
+            border: 1px solid black;
+        }
+
+        .form-select {
+            padding: 8px 30px 8px 10px;
+        }
+    }
     </style>
 </head>
 
@@ -168,8 +214,8 @@ session_start();
                 <div class="card">
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label>
+                            <div class="col-md-4 col-4">
+                                <!-- <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label> -->
                                 <select id="rowsPerPageSelect" class="form-select text-black"
                                     style="width: auto; display: inline-block; border: 1px solid black;">
                                     <option value="5">5</option>
@@ -177,17 +223,20 @@ session_start();
                                     <option value="15">15</option>
                                     <option value="20">20</option>
                                 </select>
-                                <span class="sub-judul"> data per halaman</span>
+                                <!-- <span class="sub-judul"> data per halaman</span> -->
                             </div>
-                            <div class="col-md-6 d-flex justify-content-end">
-                                <button type="button" class="btn btn-custom-eye me-2"
-                                    onclick="window.location.href='tambah_admin.php'"> Tambah</button>
-                                <button type="button" class="btn btn-custom-edit me-2"
-                                    onclick="window.location.href='data_peserta.php'">Kembali
+                            <div class="col-md-8 col-8 d-flex justify-content-end">
+                                <button type="button"
+                                    class="btn btn-custom-eye me-2 d-flex align-items-center justify-content-center"
+                                    onclick="window.location.href='tambah_admin.php'"><i
+                                        class="bi bi-plus-circle"></i></button>
+                                <button type="button"
+                                    class="btn btn-custom-edit me-2 d-flex align-items-center justify-content-center"
+                                    onclick="window.location.href='data_peserta.php'"><i
+                                        class="bi bi-arrow-left-short"></i>
                                 </button>
-                                <input type=" text" class="form-control text-black" id="searchInput"
-                                    placeholder="Cari..."
-                                    style="max-width: 200px; height: 40px; font-size: .95rem; border: 1px solid black;">
+                                <input type=" text" class="form-control text-black search" id="searchInput"
+                                    placeholder="Cari...">
                             </div>
                         </div>
                         <div class="table-responsive products-table" data-simplebar>

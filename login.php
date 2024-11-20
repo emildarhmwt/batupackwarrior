@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+<ant>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BatuPACKWARrior</title>
@@ -102,6 +102,7 @@
     .btn-custom-eye {
         background-color: #1d2730 !important;
         color: white !important;
+        font-size: 20px;
     }
 
     .btn-custom-eye:hover {
@@ -112,6 +113,7 @@
     .btn-custom-edit {
         background-color: #dfb58f !important;
         color: black !important;
+        font-size: 20px;
     }
 
     .btn-custom-edit:hover {
@@ -125,24 +127,55 @@
         max-width: 50%;
         margin: auto;
     }
-    </style>
-</head>
 
-<body>
-    <!--  Body Wrapper -->
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed">
-        <div
-            class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
-            <div class="d-flex align-items-center justify-content-center w-100">
-                <div class="row justify-content-center w-100">
-                    <div>
-                        <div class="card mb-0">
-                            <div class="card-body">
-                                <h3 class="text-center mb-4 sub-judul2"> Login Admin</h3>
-                                <img src="./assets/images/logos/batu.png" alt="Logo" class="img-login">
-                                <p class="text-center sub-judul2"></p>
-                                <?php 
+    @media (max-width: 767.98px) {
+        .img-login {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background-color: rgba(216, 226, 237, 0.32);
+            width: 100%;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .btn-custom-eye {
+            background-color: #1d2730 !important;
+            color: white !important;
+            font-size: 10px;
+        }
+
+        .btn-custom-edit {
+            background-color: #dfb58f !important;
+            color: black !important;
+            font-size: 10px;
+        }
+
+    }
+    </style>
+    </head>
+
+    <body>
+        <!--  Body Wrapper -->
+        <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+            data-sidebar-position="fixed" data-header-position="fixed">
+            <div
+                class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center w-100">
+                    <div class="row justify-content-center w-100">
+                        <div>
+                            <div class="card mb-0">
+                                <div class="card-body">
+                                    <h3 class="text-center mb-4 sub-judul2"> Login Admin</h3>
+                                    <img src="./assets/images/logos/batu.png" alt="Logo" class="img-login">
+                                    <p class="text-center sub-judul2"></p>
+                                    <?php 
                                 // pesan notifikasi
                                 if(isset($_GET['alert'])){
                                     if($_GET['alert'] == "gagal"){
@@ -154,54 +187,55 @@
                                     }
                                 }
                                 ?>
-                                <form action="periksa_login_admin.php" method="post" id="loginForm">
-                                    <div class="mb-3">
-                                        <label for="username" class="form-label sub-judul">Username</label>
-                                        <input type="text" placeholder="Username" required="required" autocomplete="off"
-                                            name="username" id="username" class="form-control">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="password" class="form-label sub-judul">Password</label>
-                                        <input type="password" placeholder="Password" required="required"
-                                            autocomplete="off" name="password" id="password" class="form-control">
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input primary" type="checkbox" value=""
-                                                id="showPassword">
-                                            <label class="form-check-label text-dark sub-judul mb-3" for="showPassword">
-                                                Show Password
-                                            </label>
+                                    <form action="periksa_login_admin.php" method="post" id="loginForm">
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label sub-judul">Username</label>
+                                            <input type="text" placeholder="Username" required="required"
+                                                autocomplete="off" name="username" id="username" class="form-control">
                                         </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <input type="submit" value="Login"
-                                            class="btn btn-custom-eye fs-4 mb-4 rounded-2 flex-grow-1 me-2 sub-judul">
-                                        <a href="./index.php"
-                                            class="btn btn-custom-edit fs-4 mb-4 rounded-2 flex-grow-1 sub-judul">Kembali</a>
-                                    </div>
-                                </form>
+                                        <div class="mb-1">
+                                            <label for="password" class="form-label sub-judul">Password</label>
+                                            <input type="password" placeholder="Password" required="required"
+                                                autocomplete="off" name="password" id="password" class="form-control">
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input primary" type="checkbox" value=""
+                                                    id="showPassword">
+                                                <label class="form-check-label text-dark sub-judul mb-3"
+                                                    for="showPassword">
+                                                    Show Password
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <input type="submit" value="Login"
+                                                class="btn btn-custom-eye mb-4 rounded-2 flex-grow-1 me-2 sub-judul">
+                                            <a href="./index.php"
+                                                class="btn btn-custom-edit mb-4 rounded-2 flex-grow-1 sub-judul">Kembali</a>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <img src="./assets/images/loginkiri.png" alt="Left Image" class="corner-image left">
+            <img src="./assets/images/loginkanan.png" alt="Right Image" class="corner-image right">
         </div>
-        <img src="./assets/images/loginkiri.png" alt="Left Image" class="corner-image left">
-        <img src="./assets/images/loginkanan.png" alt="Right Image" class="corner-image right">
-    </div>
-    <script>
-    document.getElementById('showPassword').addEventListener('change', function() {
-        var passwordInput = document.getElementById('password');
-        if (this.checked) {
-            passwordInput.type = 'text';
-        } else {
-            passwordInput.type = 'password';
-        }
-    });
-    </script>
-    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script>
+        document.getElementById('showPassword').addEventListener('change', function() {
+            var passwordInput = document.getElementById('password');
+            if (this.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+        </script>
+        <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 
 </html>

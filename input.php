@@ -114,6 +114,14 @@
         background-color: #dfb58f82 !important;
         color: black !important;
     }
+
+    @media (max-width: 767.98px) {
+        .batu {
+            font-size: 15px;
+            margin-bottom: -70px;
+            margin-top: 31px;
+        }
+    }
     </style>
 </head>
 
@@ -132,7 +140,7 @@
                 <img src="./assets/images/logos/ptba.svg" class="logo-ptba">
             </div>
             <div class="container-fluid">
-                <div class="card mt-5">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="judul fw-semibold">Form Peserta</h5>
                         <form id="form-operation" method="POST" action="input_aksi.php">

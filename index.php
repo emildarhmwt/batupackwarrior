@@ -104,6 +104,40 @@ include './koneksi.php';
         margin-bottom: -70px;
         margin-top: 10px;
     }
+
+    .search {
+        max-width: 200px;
+        height: 40px;
+        font-size: .95rem;
+        border: 1px solid black;
+    }
+
+    tr th {
+        font-size: 13px;
+    }
+
+    @media (max-width: 767.98px) {
+        .batu {
+            font-size: 15px;
+            margin-bottom: -70px;
+            margin-top: 31px;
+        }
+
+        .search {
+            max-width: 150px;
+            height: 40px;
+            font-size: .95rem;
+            border: 1px solid black;
+        }
+
+        tr th {
+            font-size: 5px;
+        }
+
+        .form-select {
+            padding: 8px 30px 8px 10px;
+        }
+    }
     </style>
 </head>
 
@@ -126,8 +160,8 @@ include './koneksi.php';
                 <div class="card">
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label>
+                            <div class="col-md-6 col-6">
+                                <!-- <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label> -->
                                 <select id="rowsPerPageSelect" class="form-select text-black"
                                     style="width: auto; display: inline-block; border: 1px solid black;">
                                     <option value="10" selected>10</option>
@@ -136,24 +170,23 @@ include './koneksi.php';
                                     <option value="40">40</option>
                                     <option value="50">50</option>
                                 </select>
-                                <span class="sub-judul"> data per halaman</span>
+                                <!-- <span class="sub-judul"> data per halaman</span> -->
                             </div>
-                            <div class="col-md-6 d-flex justify-content-end">
-                                <input type="text" class="form-control text-black me-2" id="searchInput"
-                                    placeholder="Cari..."
-                                    style="max-width: 200px; height: 40px; font-size: .95rem; border: 1px solid black;">
+                            <div class="col-md-6 col-6 d-flex justify-content-end">
+                                <input type="text" class="form-control text-black me-2 search" id="searchInput"
+                                    placeholder="Cari...">
                             </div>
                         </div>
                         <div class="table-responsive products-table" data-simplebar>
                             <table class="table table-bordered text-nowrap mb-0 align-middle table-hover">
                                 <thead class="fs-4">
-                                    <tr class="text-center">
-                                        <th class="fs-3" style="width: 5%">PERINGKAT</th>
-                                        <th class="fs-3">TEAM</th>
-                                        <th class="fs-3">SATUAN KERJA</th>
-                                        <th class="fs-3">TOTAL TONASE</th>
-                                        <th class="fs-3">POINT</th>
-                                        <th class="fs-3">TOTAL POINT</th>
+                                    <tr class="text-center judul-tabel">
+                                        <th style="width: 5%">PERINGKAT</th>
+                                        <th>TEAM</th>
+                                        <th>SATUAN KERJA</th>
+                                        <th>TOTAL TONASE</th>
+                                        <th>POINT</th>
+                                        <th>TOTAL POINT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -175,19 +208,18 @@ include './koneksi.php';
                                             ?>
                                 </tbody>
                             </table>
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-center mt-3" id="Pagination">
-                                    <!-- Pagination items will be added here by JavaScript -->
-                                </ul>
-                            </nav>
                         </div>
+                        <nav aria-label="Page navigation" class="fixed-pagination">
+                            <ul class="pagination justify-content-center mt-3" id="Pagination">
+                                <!-- Pagination items will be added here by JavaScript -->
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-
     document.addEventListener('DOMContentLoaded', function() {
         const rowsPerPageSelect = document.getElementById('rowsPerPageSelect');
         const paginationElement = document.getElementById('Pagination');

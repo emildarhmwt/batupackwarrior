@@ -136,6 +136,14 @@ $admin = mysqli_fetch_assoc($result);
         background-color: #dfb58f82 !important;
         color: black !important;
     }
+
+    @media (max-width: 767.98px) {
+        .batu {
+            font-size: 15px;
+            margin-bottom: -70px;
+            margin-top: 31px;
+        }
+    }
     </style>
 </head>
 
