@@ -2731,14 +2731,14 @@ progress {
     --bs-table-color-state: initial;
     --bs-table-bg-state: initial;
     --bs-table-color: rgb(0, 0, 0);
-    --bs-table-bg: #ffffff8d;
+    --bs-table-bg: #ffffff00;
     --bs-table-border-color: #00000066;
     --bs-table-accent-bg: transparent;
     --bs-table-striped-color: #111c2d;
     --bs-table-striped-bg: #f5f8fb;
     --bs-table-active-color: #111c2d;
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-    --bs-table-hover-color: #6f521d;
+    --bs-table-hover-color: #ef4c0e;
     --bs-table-hover-bg: rgb(221 215 203 / 48%);
     width: 100%;
     margin-bottom: 1rem;

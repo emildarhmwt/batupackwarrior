@@ -85,14 +85,14 @@ session_start();
     }
 
     .body-wrapper {
-        background-image: url("./assets/images/backgrounds/10.png");
+        background-image: url("./assets/images/backgrounds/11.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
 
     .batu {
         font-family: "Righteous", serif;
-        color: #dee7e6ab;
+        color: #0a4771;
         font-size: 40px;
         margin-bottom: -70px;
         margin-top: 10px;

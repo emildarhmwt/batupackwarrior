@@ -27,7 +27,7 @@ $admin = mysqli_fetch_assoc($result);
         rel="stylesheet">
     <style>
     .body-wrapper {
-        background-image: url("./assets/images/backgrounds/10.png");
+        background-image: url("./assets/images/backgrounds/11.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -95,7 +95,7 @@ $admin = mysqli_fetch_assoc($result);
 
     .batu {
         font-family: "Righteous", serif;
-        color: #dee7e6ab;
+        color: #0a4771;
         font-size: 40px;
         margin-bottom: -70px;
         margin-top: 10px;

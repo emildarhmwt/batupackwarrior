@@ -38,7 +38,7 @@ include './koneksi.php';
     }
 
     .body-wrapper {
-        background-image: url("./assets/images/backgrounds/10.png");
+        background-image: url("./assets/images/backgrounds/11.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -99,7 +99,7 @@ include './koneksi.php';
 
     .batu {
         font-family: "Righteous", serif;
-        color: #dee7e6ab;
+        color: #0a4771;
         font-size: 40px;
         margin-bottom: -70px;
         margin-top: 10px;
@@ -190,13 +190,14 @@ include './koneksi.php';
                         <div class="table-responsive products-table" data-simplebar>
                             <table class="table table-bordered text-nowrap mb-0 align-middle table-hover">
                                 <thead class="fs-4">
-                                    <tr class="text-center judul-tabel">
-                                        <th style="vertical-align: middle;">RANK</th>
-                                        <th style="vertical-align: middle;">TEAM</th>
-                                        <th style="vertical-align: middle;">SATUAN KERJA</th>
-                                        <th style="vertical-align: middle;">TOTAL HANDLING <br> (Ton)</th>
-                                        <th style="vertical-align: middle;">TOTAL KOMPLAIN <br> (Kali)</th>
-                                        <th style="vertical-align: middle;">KUMULATIF <br> (Ton)</th>
+                                    <tr class="text-center judul-tabel" style="background-color: #e9790f; ">
+                                        <th style="vertical-align: middle; color: white;">RANK</th>
+                                        <th style="vertical-align: middle; color: white;">TEAM</th>
+                                        <th style="vertical-align: middle; color: white;">SATUAN KERJA</th>
+                                        <th style="vertical-align: middle; color: white;">TOTAL HANDLING <br> (Ton)</th>
+                                        <th style="vertical-align: middle; color: white;">TOTAL KOMPLAIN <br> (Kali)
+                                        </th>
+                                        <th style="vertical-align: middle; color: white;">KUMULATIF <br> (Ton)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
