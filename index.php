@@ -191,14 +191,12 @@ include './koneksi.php';
                             <table class="table table-bordered text-nowrap mb-0 align-middle table-hover">
                                 <thead class="fs-4">
                                     <tr class="text-center judul-tabel">
-                                        <th style="width: 5%">PERINGKAT</th>
-                                        <th>TEAM</th>
-                                        <th>SATUAN KERJA</th>
-                                        <th>TOTAL TONASE</th>
-                                        <th>POINT TONASE</th>
-                                        <th>COMPLAIN</th>
-                                        <th>POINT COMPLAIN</th>
-                                        <th>TOTAL POINT</th>
+                                        <th style="vertical-align: middle;">RANK</th>
+                                        <th style="vertical-align: middle;">TEAM</th>
+                                        <th style="vertical-align: middle;">SATUAN KERJA</th>
+                                        <th style="vertical-align: middle;">TOTAL HANDLING <br> (Ton)</th>
+                                        <th style="vertical-align: middle;">TOTAL KOMPLAIN <br> (Kali)</th>
+                                        <th style="vertical-align: middle;">KUMULATIF <br> (Ton)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -212,8 +210,6 @@ include './koneksi.php';
                                         <td><?php echo $p['team'] ?></td>
                                         <td><?php echo $p['satuan'] ?></td>
                                         <td class="text-center"><?php echo $p['total_tonase'] ?></td>
-                                        <td class="text-center"><?php echo $p['point'] ?></td>
-                                        <td class="text-center"><?php echo $p['complain'] ?></td>
                                         <td class="text-center"><?php echo $p['point_complain'] ?></td>
                                         <td class="text-center"><?php echo $p['total_point'] ?></td>
                                     </tr>

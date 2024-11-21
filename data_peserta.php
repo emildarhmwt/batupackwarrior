@@ -295,15 +295,13 @@ session_start();
                             <table class="table table-bordered text-nowrap mb-0 align-middle table-hover">
                                 <thead class="fs-4">
                                     <tr class="text-center">
-                                        <th style="width: 5%">PERINGKAT</th>
-                                        <th>TEAM</th>
-                                        <th>SATUAN KERJA</th>
-                                        <th>TOTAL TONASE</th>
-                                        <th>POINT TONASE</th>
-                                        <th>COMPLAIN</th>
-                                        <th>POINT COMPLAIN</th>
-                                        <th>TOTAL POINT</th>
-                                        <th class="fs-3" style="width: 2%">
+                                        <th style="vertical-align: middle;">RANK</th>
+                                        <th style="vertical-align: middle;">TEAM</th>
+                                        <th style="vertical-align: middle;">SATUAN KERJA</th>
+                                        <th style="vertical-align: middle;">TOTAL HANDLING <br> (Ton)</th>
+                                        <th style="vertical-align: middle;">TOTAL KOMPLAIN <br> (Kali)</th>
+                                        <th style="vertical-align: middle;">KUMULATIF <br> (Ton)</th>
+                                        <th class="fs-3" style="vertical-align: middle;">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="flexCheckDefault" onclick="toggleCheckboxes(this)">
@@ -322,8 +320,6 @@ session_start();
                                         <td><?php echo $p['team'] ?></td>
                                         <td><?php echo $p['satuan'] ?></td>
                                         <td class="text-center"><?php echo $p['total_tonase'] ?></td>
-                                        <td class="text-center"><?php echo $p['point'] ?></td>
-                                        <td class="text-center"><?php echo $p['complain'] ?></td>
                                         <td class="text-center"><?php echo $p['point_complain'] ?></td>
                                         <td class="text-center"><?php echo $p['total_point'] ?></td>
                                         <td class="text-center">
@@ -365,17 +361,15 @@ session_start();
                 team: row.cells[1].innerText,
                 satuan: row.cells[2].innerText,
                 total_tonase: row.cells[3].innerText,
-                point: row.cells[4].innerText,
-                complain: row.cells[5].innerText,
-                point_complain: row.cells[6].innerText,
-                total_point: row.cells[7].innerText
+                point_complain: row.cells[4].innerText,
+                total_point: row.cells[5].innerText
             };
         });
 
         if (selectedData.length > 0) {
             // Redirect to edit page with selected data
             const queryString = selectedData.map((data, index) =>
-                `team[${index}]=${encodeURIComponent(data.team)}&satuan[${index}]=${encodeURIComponent(data.satuan)}&total_tonase[${index}]=${encodeURIComponent(data.total_tonase)}&point[${index}]=${encodeURIComponent(data.point)}&complain[${index}]=${encodeURIComponent(data.complain)}&point_complain[${index}]=${encodeURIComponent(data.point_complain)}&total_point[${index}]=${encodeURIComponent(data.total_point)}`
+                `team[${index}]=${encodeURIComponent(data.team)}&satuan[${index}]=${encodeURIComponent(data.satuan)}&total_tonase[${index}]=${encodeURIComponent(data.total_tonase)}&point_complain[${index}]=${encodeURIComponent(data.point_complain)}&total_point[${index}]=${encodeURIComponent(data.total_point)}`
             ).join('&');
             window.location.href = `edit.php?${queryString}`;
         } else {
