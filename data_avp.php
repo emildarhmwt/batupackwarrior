@@ -1,6 +1,5 @@
 <?php
 include './koneksi.php';
-session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -100,50 +99,10 @@ session_start();
 
     .batu {
         font-family: "Righteous", serif;
+        color: #0a4771;
         font-size: 40px;
         margin-bottom: -70px;
         margin-top: 10px;
-        color: #0a4771;
-    }
-
-    .btn-custom-eye {
-        background-color: #1d2730 !important;
-        color: white !important;
-    }
-
-    .btn-custom-eye:hover {
-        background-color: #1d27309e !important;
-        color: white !important;
-    }
-
-    .btn-custom-edit {
-        background-color: #dfb58f !important;
-        color: black !important;
-    }
-
-    .btn-custom-edit:hover {
-        background-color: #dfb58f82 !important;
-        color: black !important;
-    }
-
-    .btn-custom-delete {
-        background-color: #3d0606 !important;
-        color: white !important;
-    }
-
-    .btn-custom-delete:hover {
-        background-color: #3d06068a !important;
-        color: white !important;
-    }
-
-    .btn-custom-add {
-        background-color: #25a0ab !important;
-        color: black !important;
-    }
-
-    .btn-custom-add:hover {
-        background-color: #25a0ab9e !important;
-        color: black !important;
     }
 
     .search {
@@ -163,27 +122,14 @@ session_start();
         font-family: "Varela Round", serif;
     }
 
-    .am {
-        font-family: "Varela Round", serif;
-        color: #0a4771;
-        font-weight: bold;
-        font-size: 17px;
+    .btn-custom-eye {
+        background-color: #1d2730 !important;
+        color: white !important;
     }
 
-    .avp {
-        font-family: "Varela Round", serif;
-        color: #ed5c0a;
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 17px;
-    }
-
-    .avp:hover {
-        font-family: "Varela Round", serif;
-        color: #913e0f;
-        font-weight: bold;
-        text-decoration: underline;
-        font-size: 17px;
+    .btn-custom-eye:hover {
+        background-color: #1d27309e !important;
+        color: white !important;
     }
 
     @media (max-width: 767.98px) {
@@ -210,54 +156,6 @@ session_start();
 
         .form-select {
             padding: 8px 30px 8px 10px;
-            font-size: 5px;
-            height: 40px;
-        }
-
-        .btn-custom-eye {
-            width: 10px;
-            height: 40px;
-            padding: 10px 15px;
-        }
-
-        .btn-custom-edit {
-            width: 10px;
-            height: 40px;
-            padding: 10px 15px;
-        }
-
-        .btn-custom-delete {
-            width: 10px;
-            height: 40px;
-            padding: 10px 15px;
-        }
-
-        .btn-custom-add {
-            width: 10px;
-            height: 40px;
-            padding: 10px 15px;
-        }
-
-        element.style {
-            width: 60px;
-            display: inline-block;
-            border: 1px solid black;
-        }
-
-        .bi-plus-circle {
-            font-size: 5px;
-        }
-
-        .bi-pen {
-            font-size: 5px;
-        }
-
-        .bi-trash2 {
-            font-size: 5px;
-        }
-
-        .bi-person {
-            font-size: 5px;
         }
     }
     </style>
@@ -267,30 +165,36 @@ session_start();
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
+        <!--  Main wrapper -->
         <div class="body-wrapper">
             <div class="logo-cover d-flex justify-content-between">
                 <img src="./assets/images/logos/bumn.svg" class="logo">
                 <div class="batu">
-                    <a href="logout.php" class="batu" style="color: inherit; cursor: pointer;">
+                    <a href="login.php" class="batu" style="color: inherit; cursor: pointer;">
                         BatuPACKWARrior
                     </a>
                 </div>
                 <img src="./assets/images/logos/ptba.svg" class="logo-ptba">
             </div>
             <div class="container-fluid">
-                <div class="row mt-3 mb-3">
-                    <div class="col-lg-6 col-6 border-end text-center">
-                        <a href="data_peserta.php" class="avp"> Klasemen AM </a>
-                    </div>
-                    <div class="col-lg-6 col-6 text-center">
-                        <a href="data_peserta_avp.php" class="am"> Klasemen AVP </a>
-                    </div>
-                </div>
                 <div class="card">
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-md-3 col-3">
+                            <div class="col-md-6 col-6">
                                 <!-- <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label> -->
+                                <!-- <select id="rowsPerPageSelect" class="form-select text-black me-2"
+                                    style="width: auto; display: inline-block; border: 1px solid black;">
+                                    <option value="10" selected>Klasemen AM</option>
+                                    <option value="20">Klasemen AVP</option>
+                                </select> -->
+                                <button type="button" class="btn btn-custom-eye"
+                                    onclick="window.location.href='index.php'">Klasemen AM
+                                </button>
+                                <!-- <span class="sub-judul"> data per halaman</span> -->
+                            </div>
+                            <div class="col-md-6 col-6 d-flex justify-content-end">
+                                <input type="text" class="form-control text-black me-2 search" id="searchInput"
+                                    placeholder="Cari...">
                                 <select id="rowsPerPageSelect" class="form-select text-black"
                                     style="width: auto; display: inline-block; border: 1px solid black;">
                                     <option value="10" selected>10</option>
@@ -299,33 +203,12 @@ session_start();
                                     <option value="40">40</option>
                                     <option value="50">50</option>
                                 </select>
-                                <!-- <span class="sub-judul"> data per halaman</span> -->
-                            </div>
-                            <div class="col-md-9 col-9 d-flex justify-content-end">
-                                <button type="button"
-                                    class="btn btn-custom-eye me-2 d-flex align-items-center justify-content-center"
-                                    onclick="window.location.href='input.php'"><i class="bi bi-plus-circle"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-custom-edit me-2 d-flex align-items-center justify-content-center"
-                                    onclick="editSelected()"> <i class="bi bi-pen"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-custom-delete me-2 d-flex align-items-center justify-content-center"
-                                    onclick="deleteSelected()"> <i class="bi bi-trash2"></i>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-custom-add me-2 d-flex align-items-center justify-content-center"
-                                    onclick="window.location.href='admin.php'"> <i class="bi bi-person"></i>
-                                </button>
-                                <input type="text" class="form-control text-black search" id="searchInput"
-                                    placeholder="Cari...">
                             </div>
                         </div>
                         <div class="table-responsive products-table" data-simplebar>
                             <table class="table table-bordered text-nowrap mb-0 align-middle table-hover">
                                 <thead class="fs-4">
-                                    <tr class="text-center" style="background-color: #e9790f; ">
+                                    <tr class="text-center judul-tabel" style="background-color: #e9790f; ">
                                         <th style="vertical-align: middle; color: white;">RANK</th>
                                         <th style="vertical-align: middle; color: white;">TEAM</th>
                                         <th style="vertical-align: middle; color: white;">SATUAN KERJA</th>
@@ -333,18 +216,12 @@ session_start();
                                         <th style="vertical-align: middle; color: white;">TOTAL KOMPLAIN <br> (Kali)
                                         </th>
                                         <th style="vertical-align: middle; color: white;">KUMULATIF <br> (Ton)</th>
-                                        <th class="fs-3" style="vertical-align: middle;">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" onclick="toggleCheckboxes(this)">
-                                            </div>
-                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                             $no = 1;
-                                            $kategori = mysqli_query($koneksi, "SELECT * FROM batu ORDER BY total_point DESC");
+                                            $kategori = mysqli_query($koneksi, "SELECT * FROM batu_avp ORDER BY total_point DESC");
                                             while ($p = mysqli_fetch_array($kategori)) {
                                             ?>
                                     <tr>
@@ -354,12 +231,6 @@ session_start();
                                         <td class="text-center"><?php echo $p['total_tonase'] ?></td>
                                         <td class="text-center"><?php echo $p['point_complain'] ?></td>
                                         <td class="text-center"><?php echo $p['total_point'] ?></td>
-                                        <td class="text-center">
-                                            <div class="form-check">
-                                                <input class="form-check-input rowCheckbox" type="checkbox" value=""
-                                                    data-id="<?php echo $p['id']; ?>">
-                                            </div>
-                                        </td>
                                     </tr>
                                     <?php
                                             }
@@ -367,7 +238,7 @@ session_start();
                                 </tbody>
                             </table>
                         </div>
-                        <nav aria-label="Page navigation">
+                        <nav aria-label="Page navigation" class="fixed-pagination">
                             <ul class="pagination justify-content-center mt-3" id="Pagination">
                                 <!-- Pagination items will be added here by JavaScript -->
                             </ul>
@@ -378,37 +249,6 @@ session_start();
         </div>
     </div>
     <script>
-    function toggleCheckboxes(source) {
-        const checkboxes = document.querySelectorAll('.rowCheckbox');
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = source.checked;
-        });
-    }
-
-    function editSelected() {
-        const selectedCheckboxes = document.querySelectorAll('.rowCheckbox:checked');
-        const selectedData = Array.from(selectedCheckboxes).map(checkbox => {
-            const row = checkbox.closest('tr');
-            return {
-                team: row.cells[1].innerText,
-                satuan: row.cells[2].innerText,
-                total_tonase: row.cells[3].innerText,
-                point_complain: row.cells[4].innerText,
-                total_point: row.cells[5].innerText
-            };
-        });
-
-        if (selectedData.length > 0) {
-            // Redirect to edit page with selected data
-            const queryString = selectedData.map((data, index) =>
-                `team[${index}]=${encodeURIComponent(data.team)}&satuan[${index}]=${encodeURIComponent(data.satuan)}&total_tonase[${index}]=${encodeURIComponent(data.total_tonase)}&point_complain[${index}]=${encodeURIComponent(data.point_complain)}&total_point[${index}]=${encodeURIComponent(data.total_point)}`
-            ).join('&');
-            window.location.href = `edit.php?${queryString}`;
-        } else {
-            alert('Silakan pilih data yang ingin diedit.');
-        }
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
         const rowsPerPageSelect = document.getElementById('rowsPerPageSelect');
         const paginationElement = document.getElementById('Pagination');
@@ -473,36 +313,6 @@ session_start();
 
         updateTable();
     });
-
-    function deleteSelected() {
-        const selectedCheckboxes = document.querySelectorAll('.rowCheckbox:checked');
-        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => checkbox.getAttribute('data-id'));
-
-        if (selectedIds.length > 0) {
-            if (confirm('Apakah Anda yakin ingin menghapus data yang dipilih?')) {
-                fetch('delete.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            ids: selectedIds
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Data berhasil dihapus.');
-                            location.reload();
-                        } else {
-                            alert('Terjadi kesalahan saat menghapus data.');
-                        }
-                    });
-            }
-        } else {
-            alert('Silakan pilih data yang ingin dihapus.');
-        }
-    }
     </script>
     <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

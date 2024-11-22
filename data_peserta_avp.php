@@ -280,10 +280,10 @@ session_start();
             <div class="container-fluid">
                 <div class="row mt-3 mb-3">
                     <div class="col-lg-6 col-6 border-end text-center">
-                        <a href="data_peserta.php" class="avp"> Klasemen AM </a>
+                        <a href="data_peserta.php" class="am"> Klasemen AM </a>
                     </div>
                     <div class="col-lg-6 col-6 text-center">
-                        <a href="data_peserta_avp.php" class="am"> Klasemen AVP </a>
+                        <a href="data_peserta_avp.php" class="avp"> Klasemen AVP </a>
                     </div>
                 </div>
                 <div class="card">
@@ -304,7 +304,7 @@ session_start();
                             <div class="col-md-9 col-9 d-flex justify-content-end">
                                 <button type="button"
                                     class="btn btn-custom-eye me-2 d-flex align-items-center justify-content-center"
-                                    onclick="window.location.href='input.php'"><i class="bi bi-plus-circle"></i>
+                                    onclick="window.location.href='input_avp.php'"><i class="bi bi-plus-circle"></i>
                                 </button>
                                 <button type="button"
                                     class="btn btn-custom-edit me-2 d-flex align-items-center justify-content-center"
@@ -316,7 +316,7 @@ session_start();
                                 </button>
                                 <button type="button"
                                     class="btn btn-custom-add me-2 d-flex align-items-center justify-content-center"
-                                    onclick="window.location.href='admin.php'"> <i class="bi bi-person"></i>
+                                    onclick="window.location.href='admin_avp.php'"> <i class="bi bi-person"></i>
                                 </button>
                                 <input type="text" class="form-control text-black search" id="searchInput"
                                     placeholder="Cari...">
@@ -344,7 +344,7 @@ session_start();
                                 <tbody>
                                     <?php
                                             $no = 1;
-                                            $kategori = mysqli_query($koneksi, "SELECT * FROM batu ORDER BY total_point DESC");
+                                            $kategori = mysqli_query($koneksi, "SELECT * FROM batu_avp ORDER BY total_point DESC");
                                             while ($p = mysqli_fetch_array($kategori)) {
                                             ?>
                                     <tr>
@@ -403,7 +403,7 @@ session_start();
             const queryString = selectedData.map((data, index) =>
                 `team[${index}]=${encodeURIComponent(data.team)}&satuan[${index}]=${encodeURIComponent(data.satuan)}&total_tonase[${index}]=${encodeURIComponent(data.total_tonase)}&point_complain[${index}]=${encodeURIComponent(data.point_complain)}&total_point[${index}]=${encodeURIComponent(data.total_point)}`
             ).join('&');
-            window.location.href = `edit.php?${queryString}`;
+            window.location.href = `edit_avp.php?${queryString}`;
         } else {
             alert('Silakan pilih data yang ingin diedit.');
         }
@@ -480,7 +480,7 @@ session_start();
 
         if (selectedIds.length > 0) {
             if (confirm('Apakah Anda yakin ingin menghapus data yang dipilih?')) {
-                fetch('delete.php', {
+                fetch('delete_avp.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

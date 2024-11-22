@@ -122,6 +122,16 @@ include './koneksi.php';
         font-family: "Varela Round", serif;
     }
 
+    .btn-custom-eye {
+        background-color: #1d2730 !important;
+        color: white !important;
+    }
+
+    .btn-custom-eye:hover {
+        background-color: #1d27309e !important;
+        color: white !important;
+    }
+
     @media (max-width: 767.98px) {
         .batu {
             font-size: 15px;
@@ -172,6 +182,19 @@ include './koneksi.php';
                         <div class="row mb-3">
                             <div class="col-md-6 col-6">
                                 <!-- <label for="rowsPerPageSelect" class="sub-judul">Tampilkan:</label> -->
+                                <!-- <select id="rowsPerPageSelect" class="form-select text-black me-2"
+                                    style="width: auto; display: inline-block; border: 1px solid black;">
+                                    <option value="10" selected>Klasemen AM</option>
+                                    <option value="20">Klasemen AVP</option>
+                                </select> -->
+                                <button type="button" class="btn btn-custom-eye"
+                                    onclick="window.location.href='data_avp.php'">Klasemen AVP
+                                </button>
+                                <!-- <span class="sub-judul"> data per halaman</span> -->
+                            </div>
+                            <div class="col-md-6 col-6 d-flex justify-content-end">
+                                <input type="text" class="form-control text-black me-2 search" id="searchInput"
+                                    placeholder="Cari...">
                                 <select id="rowsPerPageSelect" class="form-select text-black"
                                     style="width: auto; display: inline-block; border: 1px solid black;">
                                     <option value="10" selected>10</option>
@@ -180,11 +203,6 @@ include './koneksi.php';
                                     <option value="40">40</option>
                                     <option value="50">50</option>
                                 </select>
-                                <!-- <span class="sub-judul"> data per halaman</span> -->
-                            </div>
-                            <div class="col-md-6 col-6 d-flex justify-content-end">
-                                <input type="text" class="form-control text-black me-2 search" id="searchInput"
-                                    placeholder="Cari...">
                             </div>
                         </div>
                         <div class="table-responsive products-table" data-simplebar>
